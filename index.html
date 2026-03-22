@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的主页</title>
+   
 </head>
 <body>
-    <h1>这是我的个人网站</h1>
-    <p>现在 README 已经消失啦！</p>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="https://github.com/endray-coder" class="logo" style="flex: 1; text-align: center;">我的主页</a>
+            <div class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">关于</a>
+                <a href="#">项目</a>
+                <a href="#">联系</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 主内容 -->
+    <div class="container">
+        <h1>欢迎来到我的个人网站</h1>
+        <div class="buttons">
+            <a href="#" class="btn btn-primary">了解更多</a>
+            <a href="#" class="btn btn-secondary">访问项目</a>
+        </div>
+        
+        <!-- 卡片区域 -->
+        <div class="card">
+            <h2>关于这个网站</h2>
+            <p>这个网站采用了苹果风格的设计原则，包括简洁的布局、适当的留白、清晰的排版和精致的交互效果。希望你喜欢！</p>
+        </div>
+    </div>
 </body>
 </html>
