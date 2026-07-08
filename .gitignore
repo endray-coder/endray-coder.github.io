@@ -1,0 +1,12 @@
+
+my-blog/node_modules/
+my-blog/public/
+my-blog/.deploy_git/
+my-blog/.DS_Store
+my-blog/db.json
+my-blog/package-lock.json
+my-blog/yarn.lock
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
