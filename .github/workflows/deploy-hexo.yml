@@ -5,43 +5,32 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: my-blog
     steps:
-      # 拉取仓库全部代码
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 安装 pnpm
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: latest
 
-      # 配置 Node 环境
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: 'pnpm'
-          cache-dependency-path: my-blog/pnpm-lock.yaml
 
-      # 安装 Hexo 依赖
       - name: Install dependencies
         run: pnpm install
 
-      # 构建静态网页
       - name: Build static files
         run: pnpm run clean && pnpm run build
 
-      # 上传构建产物
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: my-blog/public
+          path: public
 
-  # 部署到 GitHub Pages
   deploy:
     needs: build
     permissions:
