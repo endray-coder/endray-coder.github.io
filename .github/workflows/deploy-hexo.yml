@@ -12,19 +12,22 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: latest
+          version: '10'
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Install dependencies
+        env:
+          COREPACK_ENABLE_STRICT: 0
         run: pnpm install
 
       - name: Build static files
-        run: pnpm run clean && pnpm run build
+        run: pnpm run build
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
